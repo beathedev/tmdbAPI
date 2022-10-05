@@ -72,5 +72,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 =======
 # tmdbAPI
 Projeto em React.js 
->>>>>>> 876a2b74df04e2ea8ec92c92698931664c84a435
+
 # apitmdb
