@@ -15,6 +15,6 @@
  <a href="https://pt-br.reactjs.org/" target="_blank"><img src="https://github.com/mcosta21/netflix-clone-reactjs/blob/master/docs/icon-reactjs.png?raw=true" alt="React JS" width="60"></a>
   &nbsp&nbsp
 <a href="https://www.themoviedb.org/" target="_blank"><img src="https://github.com/mcosta21/netflix-clone-reactjs/blob/master/docs/icon-tmdb.png?raw=true" alt="TMDB" width="60"></a>
-[![HTML5 Badge](https://img.shields.io/badge/HTML-E34F26?style=flat-square-badge&logo=html5&logoColor=white&link=)]()
-[![CSS3 Badge](https://img.shields.io/badge/CSS-1572B6?style=flat-square-badge&logo=css3&logoColor=white&link=)]()
+<img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square-badge&logo=html5&logoColor=white&link"/>
+<img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square-badge&logo=css3&logoColor=white&link"/>
 </div>
