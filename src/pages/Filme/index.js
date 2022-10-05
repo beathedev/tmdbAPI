@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate, Navigate } from "react-router-dom";
 import api from '../../services/api';
 import './filme.css';
+import { toast } from "react-toastify";
+
 
 //api_key=f3cfddbd740c74cb1f5dff19175b8b92
 
@@ -48,14 +50,14 @@ function Filme() {
         // Verifica se o filme já está salvo
         const temFilme = filmesSalvos.some( (filmeSalvo) => filmeSalvo.id === filme.id)
         if(temFilme) {
-            alert("esse filme já está na lista")
+            toast.warn("Esse filme já está salvo na sua lista.")
             return;
         }
 
         //Se não estiver salvo, ele salva.
         filmesSalvos.push(filme);
         localStorage.setItem("@primeflix", JSON.stringify(filmesSalvos))
-        alert("filme salvo com sucesso!")
+        toast.success("Filme salvo com sucesso!")
 
     }
 

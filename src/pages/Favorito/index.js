@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import './favorito.css';
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
 function Favoritos() {
@@ -21,7 +22,7 @@ function Favoritos() {
         // por uma substituição
         setFilmes(filtroFilmes);
         localStorage.setItem("@primeflix", JSON.stringify(filtroFilmes));
-        
+        toast.success("Filme removido com sucesso!")
     }
 
     return (
