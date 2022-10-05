@@ -2,7 +2,7 @@
 <div align="center">
 <h4>Projeto Primeflix feito com React JS</h4>
 <img width="720px" height="auto" src="https://user-images.githubusercontent.com/92948733/194129609-5b419e9c-a9d2-4d98-b9aa-9ecdd3300fa0.gif" />
- <span>Pode ser acessado <a href="">aqui!</a></span>
+ <p>Pode ser acessado <a href="https://primeflix-projetocurso.netlify.app/">aqui!</a></p>
 <hr/>
 
 <h2> Sobre o projeto </h2>
