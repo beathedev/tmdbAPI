@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, Navigate } from "react-router-dom";
 import api from '../../services/api';
 import './filme.css';
 
@@ -8,6 +8,8 @@ import './filme.css';
 function Filme() {
 
     const { id } = useParams();
+    const navigation = useNavigate();
+
     const [filme, setFilme] = useState({});
     const [loading, setLoading] = useState(true);
 
@@ -25,6 +27,8 @@ function Filme() {
             })
             .catch(()=> {
                 console.log("filme não encontrado")
+                navigation("/", { replace: true})
+                return;
             })
         }
 
@@ -34,7 +38,26 @@ function Filme() {
             console.log("componente foi desmontado")
         }
 
-    }, [])
+    }, [navigation, id])
+
+    function salvarFilme() {
+        const minhaLista = localStorage.getItem("@primeflix");
+        
+        let filmesSalvos = JSON.parse(minhaLista) || [];
+        
+        // Verifica se o filme já está salvo
+        const temFilme = filmesSalvos.some( (filmeSalvo) => filmeSalvo.id === filme.id)
+        if(temFilme) {
+            alert("esse filme já está na lista")
+            return;
+        }
+
+        //Se não estiver salvo, ele salva.
+        filmesSalvos.push(filme);
+        localStorage.setItem("@primeflix", JSON.stringify(filmesSalvos))
+        alert("filme salvo com sucesso!")
+
+    }
 
     if(loading){
         return(
@@ -51,9 +74,9 @@ function Filme() {
             <span>{filme.overview}</span>
             <strong>Avaliação: {filme.vote_average} / 10 </strong>
             <div className="area-buttons">
-                <button>Salvar</button>
+                <button onClick={salvarFilme}>Salvar</button>
                 <button>
-                    <a href="#">Trailer</a>
+                    <a target="blank" rel="external" href={`https://youtube.com/results/?search_query=${filme.title} Trailer`}>Trailer</a>
                 </button>
             </div>
         </div>
